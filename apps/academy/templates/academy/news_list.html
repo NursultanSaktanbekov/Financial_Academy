@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% block title %} Новости - Практикум{% endblock title %}
+{% block content %}
+<style>
+    .carousel-item img {
+        width: auto;
+        max-height: 400px;
+        object-fit: contain;
+        border-radius: 10px;
+    }
+</style>
+
+<style>
+    /* Дополнительные стили для адаптивности текста */
+    @media (max-width: 768px) {
+        .col-lg-6 {
+            width: 100%;
+            margin-bottom: 20px; /* Добавляем немного отступа между блоками на мобильных устройствах */
+        }
+
+        .col-lg-6 h1, .col-lg-6 p {
+            text-align: center; /* Центрируем текст внутри .col-lg-6 на мобильных устройствах */
+        }
+    }
+</style>
+
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h4 class="section-title bg-white text-center text-primary px-3" style="margin-bottom: 30px">Новости - Практикум</h4>
+        </div>
+        <br>
+        {% for news in news %}
+        <div class="row">
+            <div class="col-lg-6">
+                <div id="news-images-{{ forloop.counter }}" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        {% for image in news.images.all %}
+                        <button type="button" data-bs-target="#news-images-{{ forloop.parentloop.counter }}"
+                                data-bs-slide-to="{{ forloop.counter0 }}"
+                                {% if forloop.first %}class="active" {% endif %}
+                                aria-current="{% if forloop.first %}true{% else %}false{% endif %}"
+                                aria-label="{{ image.news.title }} {{ forloop.counter0 }}">
+                        </button>
+                        {% endfor %}
+                    </div>
+                    <div class="carousel-inner" style='margin-bottom: 50px'>
+                        {% for image in news.images.all %}
+                        <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                            <img src="{{ image.images.url }}" class="d-block w-100 h-100" style="border-radius: 10px; max-width: 100%; height: auto;"
+                                 alt="{{ image.news.title }} изображение {{ forloop.counter0 }}">
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <h1 class="mb-4">{{ news.title }}</h1>
+                <p class="lead">{{ news.date }}</p>
+                <p class="lead">{{ news.description }}</p>
+            </div>
+        </div>
+        <br>
+        {% endfor %}
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+{% endblock content %}

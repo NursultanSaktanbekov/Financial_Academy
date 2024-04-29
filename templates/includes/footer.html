@@ -1,0 +1,48 @@
+{% load static %}
+<footer id="footer">
+    <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5 text-center justify-content-center">
+                <div class="col-lg-3 col-md-6">
+                    <div style="height: 0;"></div>
+                    <h4 class="text-white mb-3">Социальные сети</h4>
+                    <div class="d-flex pt-2 justify-content-center">
+                        {% for cont in displayed_contacts %}
+                        <a class="btn btn-outline-light btn-social" href="{{ cont.instagram }}"><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="{{ cont.whatsapp }}"><i class="fab fa-whatsapp"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="{{ cont.telegram }}"><i class="fab fa-telegram"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="{{ cont.tiktok }}">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 0 448 512"><style>svg{fill:#ffffff}</style><path d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.17h0A122.18,122.18,0,0,0,381,102.39a121.43,121.43,0,0,0,67,20.14Z"/></svg>
+                        </a>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">Контакты</h4>
+                    {% for cont in displayed_contacts %}
+                    <a href="{{ cont.address }}" class="mb-2 text-white"><i class="fa fa-map-marker-alt me-3"></i> Наш Адрес </a>
+                    <br>
+                    <a href="tel:{{ cont.phone_number }}" class="mb-2 text-white"><i class="fa fa-phone-alt me-3"></i>{{ cont.phone_number }}</a><br>
+                    <a href="mailto:{{ cont.email }}" class="mb-2 text-white"><i class="fa fa-envelope me-3"></i>{{ cont.email }}</a><br>
+                    {% endfor %}
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">СВИДЕТЕЛЬСТВО</h4>
+                    <p>О ГОСУДАРСТВЕННОЙ РЕГИСТРАЦИИ ЮРИДИЧЕСКОГО ЛИЦА<br>Регистрационный номер: 204683-3301-ООО<br>ОКПО:31420032<br>ИНН:03103202210174</p>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">ЛИЦЕНЗИЯ</h4>
+                    <p>ОсОО "Практикум"<br>Регистрационный номер: E2022-0105</p>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    &copy; <a class="text-white">Practicum</a>, All Right Reserved.
+                    Developed By <a href="https://t.me/DastanOskonbaev" class="text-white">Oskonbaev</a> & <a href="https://t.me/osmon03" class="text-white">Shatmanov</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

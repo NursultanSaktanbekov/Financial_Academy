@@ -1,0 +1,41 @@
+{# Помощь#}
+    <section class="u-clearfix u-palette-1-base u-section-8" id="sec-74da">
+      <div class="u-expanded-width u-palette-3-base u-shape u-shape-rectangle u-shape-1"></div>
+      <p class="u-align-center u-text" style="margin-bottom: 300px; margin-top: 80px; margin-left: 150px; max-width: 80%; font-size: 30px; text-shadow: 0.5px 0.5px 1px black">
+        <span style="font-size: 60px;">Присоединяйтесь к нам в Практикум!</span><br>
+        Приходите за новыми знаниями и навыками. Мы всегда открыты и готовы поддержать вас на каждом этапе обучения и развития вашей карьеры. <br>Ваши цели - наш приоритет.
+    </p>    
+      <div class="u-align-center-sm u-align-center-xs u-container-style u-group u-radius-33 u-shape-round u-white u-group-1">
+        <div class="u-container-layout u-valign-middle-xs u-container-layout-1">
+          <h2 class="u-text u-text-default u-text-1">Нужна помощь?</h2>
+          <div class="u-form u-form-1">
+            <form method="post" action="{% url 'index' %}" class="u-clearfix u-form-spacing-13 u-form-vertical u-inner-form" style="padding: 0px;" source="email" name="form-2">
+              {% csrf_token %}
+              <div class="u-form-group u-form-name">
+                <label for="name-da97" class="u-label" wfd-invisible="true">Имя</label>
+                <input type="text" placeholder="Иван Иванов" id="name-da97" name="full_name" class="u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-grey-5 u-input u-input-rectangle u-radius-10" required="">
+              </div>
+              <div class="u-form-group u-form-partition-factor-2 u-form-phone u-form-group-2">
+                <label for="phone-10f2" class="u-label" wfd-invisible="true">Телефон</label>
+                <input type="tel" pattern="\+?\d{0,3}[\s\(\-]?([0-9]{2,3})[\s\)\-]?([\s\-]?)([0-9]{3})[\s\-]?([0-9]{2})[\s\-]?([0-9]{2})" placeholder="+996 XXX XXX XXX" id="phone-10f2" name="phone_number" class="u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-grey-5 u-input u-input-rectangle u-radius-10" required="">
+              </div>
+              <div class="u-form-email u-form-group u-form-partition-factor-2">
+                <label for="email-da97" class="u-label" wfd-invisible="true">Электронная почта</label>
+                <input type="email" placeholder="ivanov@mail.ru" id="email-da97" name="email" class="u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-grey-5 u-input u-input-rectangle u-radius-10" required="">
+              </div>
+              <div class="u-form-group u-form-submit">
+                <a href="#" class="u-active-palette-1-base u-border-none u-btn u-btn-round u-btn-submit u-button-style u-hover-palette-1-base u-palette-3-base u-radius-10" style="font-size: 15px">Запросить уточнение</a>
+                <input type="submit" value="отправить" class="u-form-control-hidden" wfd-invisible="true">
+              </div>
+                <div class="u-form-send-error u-form-send-message" style="background-color: #6af480;"> Спасибо! Ваше сообщение отправлено. </div>
+                <input type="hidden" value="" name="recaptchaResponse" wfd-invisible="true">
+              <input type="hidden" name="formServices" value="8885132c-87e0-e261-021d-5b221b900c1f">
+            </form>
+          </div>
+          <p class="u-text u-text-grey-50 u-text-2">Наши специалисты свяжутся с вами для уточнения деталей. <br>Мы будем рады помочь вам найти курс.</p>
+          <div class="u-social-icons u-spacing-20 u-social-icons-1">
+          </div>
+        </div>
+      </div>
+    </section>
+{# Помощь#}

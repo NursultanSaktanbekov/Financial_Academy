@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Преподаватель - Практикум{% endblock title %}
+{% block content %}
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
+                <div class="position-relative h-100">
+                    <img src="{{ teacher.photo.url }}" class="u-image u-image-1 img-fluid" style="border-radius: 10px; max-width: 100%;">
+                </div>
+            </div>
+            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+                <h6 class="section-title bg-white text-start text-primary pe-3">О Преподавателе</h6>
+                <h1 class="mb-4">{{ teacher.full_name}}</h1>
+                <p class="mb-4" style="word-wrap: break-word;">{{ teacher.about_me }}</p>
+                <p class="mb-4"><strong>Опыт:</strong> {{ teacher.experience }}</p>
+                <p class="mb-4"><strong>Награды:</strong> {{ teacher.achievements }}</p>
+                <p class="mb-4"><strong>Роль:</strong> {{ teacher.role }}</p>
+                <p class="mb-4" style="word-wrap: break-word;"><strong>Twitter:</strong> {{ teacher.twitter }}</p>
+                <p class="mb-4" style="word-wrap: break-word;"><strong>Facebook:</strong> {{ teacher.facebook }}</p>
+                <p class="mb-4" style="word-wrap: break-word;"><strong>Instagram:</strong> {{ teacher.instagram }}</p>
+                <div class="row gy-2 gx-4 mb-4">
+                    <strong>Курсы:</strong>
+                    {% for course in teacher.courses.all %}
+                    <div class="col-sm-6">
+                        <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i><a href="{% url 'course_detail' course.pk %}" style="word-wrap: break-word;">{{ course.name }}</a></p>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="row justify-content-center">
+        {% for image in teacher.images.all %}
+        <div class="col-sm-4">
+            <figure class="image-wrapper">
+                <img src="{{ image.images.url }}" class="img-fluid modal-image" alt="{{ image.teacher.name }}">
+                <figcaption class="image-caption">{{ image.caption }}</figcaption>
+                <div class="modal-overlay">
+                    <div class="modal-content">
+                        <img src="{{ image.images.url }}" class="img-fluid modal-image" alt="{{ image.teacher.name }}">
+                    </div>
+                </div>
+            </figure>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}

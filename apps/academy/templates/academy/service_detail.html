@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Услуга - Практикум{% endblock title %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'styles/modal.css' %}">
+<script src="{% static 'scripts/modal.js' %}"></script>
+
+<style>
+    .order-button {
+        background-color: #007bff;
+        color: #fff;
+        padding: 12px 24px;
+        border: none;
+        border-radius: 5px;
+        text-transform: uppercase;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .order-button:hover {
+        background-color: #0056b3;
+    }
+
+    .service-image {
+        border-radius: 10px;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .service-title {
+        margin-top: 30px;
+    }
+
+    .service-description {
+        margin-top: 20px;
+        margin-bottom: 50px;
+    }
+</style>
+
+<div class="container py-5">
+    <div class="row justify-content-center align-items-center">
+        <div class="col-lg-8 col-md-10 col-sm-12 text-center mb-4">
+            <img src="{{ service.image.url }}" class="service-image img-fluid" alt="{{ service.title }}">
+        </div>
+        <div class="col-lg-8 col-md-10 col-sm-12 text-center">
+            <h1 class="service-title">{{ service.title }}</h1>
+            <p class="service-description text-wrap" style="word-wrap: break-word;">{{ service.description }}</p>
+            <a href="{% url 'index' %}#sec-74da" class="order-button">Заказать услугу</a>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

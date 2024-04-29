@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Статистика</title>
+     <style>
+        body {
+            text-align: center;
+        }
+        form {
+            display: inline-block;
+            text-align: left;
+            margin-bottom: 30px;
+        }
+
+        p {
+            margin: 10px;
+        }
+        input {
+            border-radius: 10px;
+        }
+        button {
+            border-radius: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        h1 {
+            color: #f00;
+        }
+    </style>
+</head>
+<body>
+
+<h1 style='margin-top: 40px'>Статистика Заявок</h1>
+
+<form method="get" action="{% url 'statistics' %}">
+    <label for="start_date" style="padding-right: 10px;">Начальная дата:</label>
+             <input type="date" style="padding-left: 40px;" name="start_date" value="{{ start_date }}">
+
+            <label for="end_date" style="padding-right: 10px; margin-left: 30px">Конечная дата:</label>
+            <input type="date" style="padding-left: 40px;" name="end_date" value="{{ end_date }}">
+
+    <button type="submit" style="margin: 30px">Обновить статистику</button>
+</form>
+<div id="statistics">
+<p>Общее количество заявок: {{ total_applications }}</p>
+<p>Количество обработанных заявок: {{ processed_applications }}</p>
+<p>Процент обработанных заявок: {{ percentage_processed }}%</p>
+<p>Количество поступивших на обучение: {{ admitted_applications }}</p>
+<p>Процент поступивших на обучение: {{ percentage_admitted }}%</p>
+</div>
+
+</body>
+</html>
+
+{% endblock %}

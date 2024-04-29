@@ -1,0 +1,593 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Курсы Практикум - Получите знания и навыки {% endblock title %}
+{% block content %}
+
+
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta name="keywords" content="​Onlined University of
+In-Demand Professions, ​Top ten most popular courses for international students, ​What Is a Life Coach?, ​Leader in Executive Education, ​Flexible Distance Learning, ​Need Help?">
+  <meta name="description" content="">
+  <link rel="stylesheet" href="{% static 'new_templates/main/nicepage.css' %}" media="screen">
+  <link rel="stylesheet" href="{% static 'new_templates/main/Главная.css' %}" media="screen">
+  <script class="u-script" type="text/javascript" src="{% static 'new_templates/main/jquery-1.9.1.min.js' %}" defer=""></script>
+  <script class="u-script" type="text/javascript" src="{% static 'new_templates/main/nicepage.js' %}" defer=""></script>
+  <meta name="generator" content="Nicepage 6.7.5, nicepage.com">
+  <meta name="referrer" content="origin">
+  <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+  <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+
+<style>
+.u-sheet-1 {
+  padding-top: 50px;
+}
+
+.u-text-1 {
+  margin-top: 0;
+}
+
+.u-image-1 {
+  width: 100%;
+  height: auto;
+}
+
+.u-list-1 {
+  margin-top: 20px;
+}
+
+@media only screen and (max-width: 767px) {
+  .u-sheet-1 .u-text-1 {
+    margin-top: 20px;
+  }
+}
+
+.u-container-layout a {
+  white-space: normal;
+  word-wrap: break-word;
+}
+
+.u-text-default {
+  font-family: "Arial", sans-serif;
+}
+
+.u-icon-1 {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  flex-shrink: 0;
+  align-items: center !important;
+}
+
+.red-text {
+  color: red !important;
+}
+
+.course-link {
+  color: #000 !important;
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 767px) {
+  .u-btn {
+    width: auto;
+    max-width: 100%;
+    display: block;
+    margin: 0 auto 10px;
+  }
+}
+
+.u-repeater-1 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.u-container-style.u-list-item.u-repeater-item {
+  flex: 0 0 auto;
+  width: calc(50% - 5px);
+}
+
+@media only screen and (max-width: 767px) {
+  .u-container-style.u-list-item.u-repeater-item {
+    width: 100%;
+  }
+}
+
+.u-container-style.u-list-item.u-repeater-item {
+  flex: 0 0 calc(50% - 10px);
+  max-width: calc(20% - 30px);
+}
+
+.u-container-layout-1 .u-image-1 {
+  width: 100%;
+  height: auto;
+}
+
+.u-container-layout-1 .u-text-2 {
+  font-size: 16px;
+}
+
+@media only screen and (max-width: 767px) {
+  .u-container-style.u-list-item.u-repeater-item {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+.u-section-4 {
+  padding-top: 50px;
+}
+
+.u-section-4 .u-text-1 {
+  margin-top: -20px;
+}
+
+.u-section-4 .u-list-1 {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.u-section-4 .u-image-1 {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 30px;
+}
+
+.u-section-4 .u-container-layout-1 {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.u-section-4 .u-image-1 {
+  max-width: 45%;
+}
+
+.u-section-4 .u-list-1 {
+  max-width: 45%;
+  word-wrap: break-word;
+  list-style-type: none;
+}
+
+@media (max-width: 767px) {
+  .u-section-4 .u-container-style {
+    align-items: flex-start !important;
+  }
+
+  .u-section-4 .u-image-1 {
+    order: -1 !important;
+  }
+
+  .u-section-4 .u-container-layout-1 {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .u-section-4 .u-image-1 {
+    margin-bottom: 20px;
+  }
+
+  .u-section-4 .u-list-1 {
+    max-width: 100%;
+  }
+}
+</style>
+
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+</style>
+<style>
+  .advantage-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 -10px;
+  }
+  .advantage-item {
+    flex: 0 0 calc(20% - 20px);
+    margin-bottom: 20px;
+    padding: 0 10px;
+  }
+</style>
+<style>
+  .advantage-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 -10px;
+  }
+  .advantage-item {
+    flex: 0 0 calc(20% - 20px);
+    margin-bottom: 20px;
+    padding: 0 10px;
+    max-width: 225px;
+  }
+  .read-more {
+    padding: 8px 12px;
+    font-size: 14px;
+    max-width: 100%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  .new-badge {
+    background-color: #ff0000;
+    color: #ffffff;
+    padding: 3px 6px;
+    border-radius: 5px;
+    font-size: 12px;
+    margin-left: 5px;
+}
+{% comment %} 
+.u-btn-1 {
+  width: 1000px !important;
+  height: 25px !important;
+} {% endcomment %}
+{% comment %} .u-list:not(.u-repeater), .u-blog:not(.u-repeater), .u-products:not(.u-repeater) {
+  flex-direction: inherit !important;
+} {% endcomment %}
+
+
+</style>
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Organization",
+    "name": "шаблон1",
+    "url": "/",
+    "logo": "images/default-logo.png"
+  }
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var buttons = document.querySelectorAll('.u-btn-1');
+    var maxWidth = 0;
+    var maxHeight = 0;
+    buttons.forEach(function(button) {
+      var buttonWidth = button.offsetWidth;
+      var buttonHeight = button.offsetHeight;
+      
+      if (buttonWidth > maxWidth) {
+        maxWidth = buttonWidth;
+      }
+      if (buttonHeight > maxHeight) {
+        maxHeight = buttonHeight;
+      }
+    });
+
+    buttons.forEach(function(button) {
+      button.style.width = maxWidth + 'px';
+      button.style.height = maxHeight + 'px';
+    });
+  });
+  
+</script>
+<script>
+  function setEqualButtonSize() {
+    var buttons = document.querySelectorAll('.u-btn-1');
+    var maxWidth = 0;
+    var maxHeight = 0;
+    buttons.forEach(function(button) {
+      var buttonWidth = button.offsetWidth;
+      var buttonHeight = button.offsetHeight;
+      
+      if (buttonWidth > maxWidth) {
+        maxWidth = buttonWidth;
+      }
+      if (buttonHeight > maxHeight) {
+        maxHeight = buttonHeight;
+      }
+    });
+    buttons.forEach(function(button) {
+      button.style.width = maxWidth + 'px';
+      button.style.height = maxHeight + 'px';
+    });
+  }
+  window.onload = function() {
+    setEqualButtonSize();
+  };
+</script>
+
+  <meta name="theme-color" content="#0d244b">
+  <meta property="og:title" content="Главная">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="/">
+  <meta data-intl-tel-input-cdn-path="intlTelInput/">
+</head>
+
+
+
+
+{# Начало контента #}
+<body data-path-to-root="./" data-include-products="false" class="u-body u-xl-mode" data-lang="ru">
+
+
+  
+{#  Кнопки услуг  #}
+<section class="u-align-center u-clearfix u-image u-shading u-section-1" src="" data-image-width="1620" data-image-height="1080" id="sec-115c" >
+  <style>
+    .service-buttons .u-list:not(.u-repeater), .service-buttons .u-blog:not(.u-repeater), .service-buttons .u-products:not(.u-repeater) {
+      flex-direction: inherit !important;
+    }
+  </style>
+  <div class="u-clearfix u-sheet u-sheet-1 service-buttons">
+    <h1 class="u-text u-text-default u-title u-text-1"> Добро пожаловать в Практикум </h1>
+    <p class="u-text u-text-default u-text-2" style="margin-bottom: 20px; font-size: 25px">Наши услуги</p>
+    <div class="u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-list u-list-1 u-align-center u-clearfix" style="display: flex; flex-wrap: wrap; justify-content: center;">
+      <div class="u-container-style u-list-item" style="margin: 10px;">
+        <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-1">
+          <a href="{% url 'accounting' %}" class="u-btn u-btn-round u-button-style u-palette-3-base u-radius-50 u-btn-1">Аутсорсинг бухгалтерии</a>
+        </div>
+      </div>
+      {% for service in displayed_services %}
+      <div class="u-container-style u-list-item" style="margin: 10px;">
+        <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-1">
+          <a href="{% url 'service_detail' service.pk %}" class="u-btn u-btn-round u-button-style u-palette-3-base u-radius-50 u-btn-1">{{ service.title }}</a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{#  Кнопки услуг  #}
+
+
+
+{# Популярные курсы #}
+<section class="u-clearfix u-section-2" id="sec-7c1f">
+  <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+    <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
+      <div class="u-layout">
+        <div class="u-layout-row">
+          <div class="u-align-center u-container-style u-layout-cell u-size-33 u-layout-cell-1">
+            <div class="u-container-layout u-valign-top u-container-layout-1">
+              <h2 class="u-custom-font u-font-montserrat u-text u-text-1" style="margin-bottom: 30px; margin-top: -70px"> Наши самые популярные курсы</h2>
+              <img src="{% static 'new_templates/main/images/top_courses.jpg' %}" alt="" class="u-expanded-width u-image u-image-round u-radius-33 u-image-1" data-image-width="1620" data-image-height="1080">
+              <p class="u-text u-text-2" style="width: 100%; font-size: 20px;">Мы предлагаем обучающие курсы, которые помогут вам и вашему персоналу повысить уровень знаний и навыков в области бухгалтерии и компьютерной грамотности.</p>
+            </div>
+          </div>
+          <div class="u-align-center u-container-style u-layout-cell u-shape-rectangle u-size-27 u-layout-cell-2">
+            <div class="u-container-layout u-valign-middle u-container-layout-2">
+              <ul class="u-text u-text-3">
+                {% for course in courses %}
+                  {% if forloop.counter0 < 10 %}
+                      <li style="list-style-type: none;">
+                          <a href="{% url 'course_detail' course.pk %}" class="course-link">
+                            {% if course.badge %}
+                                  <span class="new-badge">{{ course.badge }}</span>
+                              {% endif %}
+                              {{ course.name }}
+                          </a>                  
+                      </li>                  
+                      {% if not forloop.last %}
+                          <hr style="margin: 10px 0;">
+                      {% endif %}
+                  {% endif %}
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{# Популярные курсы #}
+
+
+
+{# Особенности #}
+  <section class="u-align-center u-clearfix u-palette-1-base u-section-3" id="sec-a1a3">
+    <div class="u-expanded-width u-palette-3-base u-shape u-shape-rectangle u-shape-1"></div>
+    <div class="u-clearfix u-gutter-20 u-layout-wrap u-layout-wrap-1">
+      <div class="u-layout">
+        <div class="u-layout-row">
+          <div class="u-size-15 u-size-30-md">
+            <div class="u-layout-col">
+              <div class="u-container-style u-image u-layout-cell u-size-40 u-image-1" data-image-width="900" data-image-height="999">
+                <div class="u-container-layout u-container-layout-1"></div>
+              </div>
+              <div class="u-container-style u-hidden-md u-hidden-sm u-hidden-xs u-layout-cell u-size-20 u-layout-cell-2" wfd-invisible="true">
+                <div class="u-container-layout u-container-layout-2"></div>
+              </div>
+            </div>
+          </div>
+          <div class="u-size-15 u-size-30-md">
+            <div class="u-layout-col">
+              <div class="u-container-style u-hidden-md u-hidden-sm u-hidden-xs u-layout-cell u-size-20 u-layout-cell-3" wfd-invisible="true">
+                <div class="u-container-layout u-container-layout-3"></div>
+              </div>
+              <div class="u-container-style u-image u-layout-cell u-size-40 u-image-2" data-image-width="900" data-image-height="694">
+                <div class="u-container-layout u-container-layout-4"></div>
+              </div>
+            </div>
+          </div>
+          <div class="u-size-15 u-size-30-md">
+            <div class="u-layout-col">
+              <div class="u-container-style u-image u-layout-cell u-size-40 u-image-3" data-image-width="1200" data-image-height="1018">
+                <div class="u-container-layout u-container-layout-5"></div>
+              </div>
+              <div class="u-container-style u-hidden-md u-hidden-sm u-hidden-xs u-layout-cell u-size-20 u-layout-cell-6" wfd-invisible="true">
+                <div class="u-container-layout u-container-layout-6"></div>
+              </div>
+            </div>
+          </div>
+          <div class="u-size-15 u-size-30-md">
+            <div class="u-layout-col">
+              <div class="u-container-style u-hidden-md u-hidden-sm u-hidden-xs u-layout-cell u-size-20 u-layout-cell-7" wfd-invisible="true">
+                <div class="u-container-layout u-container-layout-7"></div>
+              </div>
+              <div class="u-container-style u-image u-layout-cell u-size-40 u-image-4" data-image-width="600" data-image-height="784">
+                <div class="u-container-layout u-container-layout-8"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="u-list u-list-1">
+      <p class="u-text u-text-2" style="width: 80%; font-size: 40px; margin-bottom: 50px; margin-left: 120px">Откройте для себя уникальные преимущества обучения и развития в "Практикуме"</p>
+  <div class="u-repeater u-repeater-1" style="margin-bottom: 20px">
+    <div class="advantage-container">
+      {% for advantage in displayed_advantages %}
+      <div class="advantage-item u-align-center u-container-style u-list-item u-palette-5-light-3 u-radius-20 u-repeater-item u-shape-round u-list-item-1">
+        <div class="u-container-layout u-similar-container u-valign-top u-container-layout-9">
+          <div class="u-align-center" style="display: flex; flex-direction: column; align-items: center;">
+            <span class="u-align-center u-icon u-icon-circle u-palette-3-base u-spacing-22 u-text-white" style="display: flex; justify-content: center; align-items: center; overflow: hidden; border-radius: 50%; width: 100px; height: 100px; margin-right: 10px;">
+              <img src="{{ advantage.logo.url }}" alt="{{ advantage.title }}" class="u-icon-1" style="object-fit: cover; width: 100%; height: 100%; flex-shrink: 0; align-items: center !important;">
+            </span>
+            <div style="max-width: 225px;">
+              <h5 class="u-text u-text-1" style="margin-left: 20px; max-width: 80%; font-size: 16px">{{ advantage.title }}</h5>
+              <p class="u-text u-text-palette-5-dark-2 u-text-2 expandable-content" style="margin-left: 20px; max-width: 80%">{{ advantage.preview_body|truncatechars:150 }}</p>
+              <p class="u-text u-text-palette-5-dark-2 u-text-2 full-content" style="display: none; margin-left: 20px; max-width: 80%">{{ advantage.body }}</p>
+            </div>
+            <a href="#" class="u-active-none u-align-center u-border-1 u-border-active-grey-60 u-border-black u-border-hover-grey-60 u-border-no-left u-border-no-right u-border-no-top u-btn u-button-style u-hover-none u-none u-text-body-color u-btn-1 read-more" style="width: 100px; height: 7px;">больше</a>
+
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    
+  </div>
+</div>
+  </section>
+{# Особенности #}
+
+
+
+{# Основатель #}
+<section class="u-align-center u-clearfix u-image u-section-4" id="carousel_a76b">
+  <div class="u-clearfix u-sheet" style="margin-top: 20px">
+    <div class="u-container-style">
+      <h1 class="u-text u-text-default u-text-1" style="text-align: center; margin-bottom: 40px; font-size: 50px;">Встречайте!</h1>
+      <h1 class="u-text u-text-default u-text-1" style="text-align: center; font-size: 40px;">{{ company_head.title }}</h1>
+      <div class="u-container-layout u-container-layout-1">
+        <img src="{{ company_head.preview_photo.url }}" alt="" class="u-image u-image-round u-radius-20 u-image-1">
+        <ul class="u-list u-list-1" style="margin-top: 70px; max-width: 50%">
+          {% for fact in company_head.facts_list %}
+           <li class="u-list-item" style="margin-bottom: 20px; display: flex; align-items:center; font-size: 20px"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 511.999 511.999" style="width:55px; height:55px; margin-right:40px;"><use xlink:href="#svg-a226"></use></svg><svg style="fill: red " class="u-svg-content" viewBox="0 0 511.999 511.999" x="0px" y="0px" id="svg-a226" style="enable-background:new 0 0 511.999 511.999;"><g><g><path d="M506.231,75.508c-7.689-7.69-20.158-7.69-27.849,0l-319.21,319.211L33.617,269.163c-7.689-7.691-20.158-7.691-27.849,0    c-7.69,7.69-7.69,20.158,0,27.849l139.481,139.481c7.687,7.687,20.16,7.689,27.849,0l333.133-333.136    C513.921,95.666,513.921,83.198,506.231,75.508z"></path>
+          </g></g></svg> <span style="width:80%">{{ fact }}</span></li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+    <p class="u-text u-text-default u-text-2" style="margin-left: 100px; margin-top: 0px; margin-bottom: 100px; max-width: 1000px;font-size: 20px">Практикум под ее руководством – это не только услуги высшего качества, но и образовательная платформа, способствующая росту и развитию специалистов в финансах. Добро пожаловать в мир, где ваш успех подкреплен опытом и знаниями Бактыгуль Урманбетовны.</p>
+  </div>
+</section>
+{# Основатель #}
+
+
+
+{# Перечень предоставляемых услуг #}
+<section class="u-clearfix u-section-5" id="carousel_a8ad">
+    <div class="u-palette-1-base u-shape u-shape-rectangle u-shape-1"></div>
+    <img class="u-image u-image-round u-radius-20 u-image-1" src="{% static 'new_templates/main/images/ab.jpg' %}" data-image-width="1620" data-image-height="1080">
+    <div class="u-clearfix u-gutter-50 u-layout-wrap u-layout-wrap-1" style="border-radius: 20px;">
+        <div class="u-layout">
+            <div class="u-layout-row">
+                <div class="u-size-37">
+                    <div class="u-layout-col">
+                        <div class="u-container-style u-layout-cell u-left-cell u-palette-3-base u-radius-20 u-shape-round u-size-60 u-layout-cell-1">
+                            <div class="u-container-layout u-valign-middle u-container-layout-1">
+                                <h2 class="u-text u-text-default u-text-1" style= "color: #ffffff !important; text-align: left; text-shadow: 0.5px 0.5px 1px black">Наши услуги включают:</h2>
+                                <ul class="u-text u-text-default u-text-2" style="text-align: left; text-shadow: 0.3px 0.3px 0.5px black">
+                                  <li><strong>Аутсорсинг бухгалтерии</strong></li>
+                                  <li><strong>Восстановление бухгалтерии:</strong> Не дайте прошлым ошибкам помешать вашему будущему росту. Мы поможем вам начать с чистого листа.</li>
+                                  <li><strong>Годовой баланс:</strong> Предоставим полный и точный отчет о финансовом состоянии вашего бизнеса за год.</li>
+                                  <li><strong>Сдача и подготовка отчетов:</strong> Будьте уверены в своевременности и точности всех необходимых отчетов.</li>
+                                  <li><strong>Бухгалтерское обслуживание:</strong> От частичной помощи до полного ведения бухгалтерии – выберите оптимальный вариант для вашего бизнеса.</li>                              
+                                </ul>
+                                <a href="{% url 'accounting' %}" class="u-btn u-btn-round u-button-style u-radius-20 u-btn-2">узнать больше</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="u-size-23">
+                    <div class="u-layout-col">
+                        <div class="u-container-style u-hidden-sm u-hidden-xs u-layout-cell u-right-cell u-size-30 u-layout-cell-2">
+                            <div class="u-container-layout u-container-layout-2"></div>
+                        </div>
+<div class="u-container-style u-image u-layout-cell u-right-cell u-size-30 u-image-2" data-image-width="626" data-image-height="417" style="border-radius: 50px;"></div>
+                            <div class="u-container-layout u-container-layout-3"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{# Перечень предоставляемых услуг #}
+
+
+
+{# Команда #}
+<section class="u-clearfix u-white u-section-6" id="carousel_f8dc">
+  <div class="u-expanded-width u-palette-1-base u-shape u-shape-rectangle u-shape-1"></div>
+  <div class="u-palette-3-base u-radius-20 u-shape u-shape-round u-shape-2"></div>
+  <img src="{% static 'new_templates/main/images/team.jpg' %}" class="u-align-left u-image u-image-round u-radius-20 u-image-1" data-image-width="1920" data-image-height="1012">
+  <div class="u-list u-list-1">
+    <div class="u-repeater u-repeater-1" style="margin-bottom: 30px">
+      {% for teacher in displayed_teachers %}
+      <div class="u-align-center u-container-style u-list-item u-radius-20 u-repeater-item u-shape-round u-white u-list-item-1">
+        <div class="u-container-layout u-similar-container u-valign-top u-container-layout-1">
+        <div class="u-image u-image-circle u-image-2" data-image-width="1920" data-image-height="1080" style="background-image: url('{{ teacher.photo.url }}');"></div>
+        <h4 class="u-text u-text-palette-1-base u-text-1"><a href="{% url 'teacher_detail' teacher.pk %}">{{ teacher.full_name }}</a><br></h4>
+          <p class="u-text u-text-2" style="font-size: 14px; color: #666; line-height: 1.6;">{{ teacher.role }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  <p class="u-align-center u-text" style="margin-left: 210px; max-width: 70%; margin-bottom: 150px; color: black; font-size: 20px"><span style="font-size: 30px;">Встречайте нашу команду – основу успеха Практикума!</span><br>
+    В "Практикуме" мы гордимся нашими талантливыми специалистами, каждый из которых вносит уникальный вклад в успех нашей компании и ее клиентов. Наша команда состоит из опытных профессионалов, готовых поделиться своими знаниями и опытом для вашего развития.</p>
+</section>
+{# Команда #}
+
+
+
+{# Отзывы #}
+  <section class="u-clearfix u-palette-3-base u-section-7" id="carousel_4200">
+  <div class="u-expanded-width u-shape u-shape-rectangle u-white u-shape-1"></div>
+  <h2 class="u-text u-text-default u-text-1 course-link"><span style="font-size: 80px">Наши отзывы</span> <br> говорят сами за себя</h2>
+  <p class="u-text u-text-grey-40 u-text-2">Успехи наших студентов и их положительные отзывы - наша гордость и подтверждение высокого качества обучения в "Практикуме". Мы всегда рады помочь вам в достижении ваших профессиональных и личных целей.</p>
+  <div class="u-list u-list-1">
+    <div class="u-repeater u-repeater-1">
+      {% for review in displayed_reviews %}
+      <div class="u-container-style u-grey-5 u-list-item u-radius-20 u-repeater-item u-shape-round">
+          <div class="u-container-layout u-similar-container u-valign-top u-container-layout-2">
+            <h3 class="u-text u-text-default u-text-5"><a href="{{ review.author_link }}">{{ review.author }}</a></h3>
+            <p class="u-text u-text-6">{{ review.content }}</p>
+          </div>
+      </div>
+      {% endfor %}
+    </div>
+      </div>
+  </section>
+{# Отзывы #}
+
+
+</body>
+{# Конец контента #}
+
+{% block help %}
+    {% include 'academy/help_block.html' %}
+{% endblock help %}
+
+{% endblock content %}
+

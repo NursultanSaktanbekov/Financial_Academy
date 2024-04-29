@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block title %}Услуги - Практикум{% endblock title %}
+
+{% block content %}
+<style>
+    .btn-order, .btn-details {
+        margin-top: 20px;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    .service-divider {
+        border-top: 2px solid #ccc;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .course-image {
+        border-radius: 10px;
+        max-width: 100%;
+        max-height: 450px;
+        width: auto;
+    }
+</style>
+
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h4 class="section-title bg-white text-center text-primary px-3" style="margin-bottom: 50px">Услуги - Практикум</h4>
+        </div>
+
+        {% for service in active_services %}
+        <div class="row service-section" style="margin-bottom: 100px">
+            <div class="col-lg-6 col-md-12 d-flex justify-content-center align-items-center mb-4 mb-md-0">
+                <img src="{{ service.image.url }}" class="course-image" alt="{{ service.title }}" loading="lazy">
+            </div>
+            <div class="col-lg-6 col-md-12">
+                <h1 class="mb-4">{{ service.title }}</h1>
+                <p class="lead">{{ service.date }}</p>
+                <p class="lead service-description" style="word-wrap: break-word;">{{ service.description }}</p>
+
+                <a href="{% url 'index' %}#sec-74da" class="btn btn-primary btn-lg btn-order">Заказать услугу</a>
+                <a href="{% url 'service_detail' service.pk %}" class="btn btn-success btn-lg btn-details">Подробнее</a>
+            </div>
+        </div>
+        <hr class="service-divider">
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}

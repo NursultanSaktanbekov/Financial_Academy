@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /aslan
+Allow: /news
+Allow: /course
+Allow: /teacher
+Sitemap: /sitemap.xml

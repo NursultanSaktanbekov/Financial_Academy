@@ -1,0 +1,142 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Детальная страница курса{% endblock title %}
+{% block content %}
+
+    <title>Детальная страница курса</title>
+    <style>
+        body {
+            background-color: #f3f3f3;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .course-container {
+            max-width: 800px;
+            margin: 50px auto;
+            background-color: #fff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .course-header {
+            background-color: #6c63ff;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .course-title {
+            color: #fff;
+            font-size: 36px;
+            margin: 0;
+        }
+
+        .course-image {
+            max-width: 100%;
+            height: auto;
+            margin-top: 30px;
+        }
+
+        .course-details {
+            padding: 30px;
+        }
+
+        .course-description {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .course-details p {
+            margin: 0;
+        }
+
+        .course-details strong {
+            color: #333;
+        }
+
+        .instructor-section {
+            background-color: #f9f9f9;
+            padding: 30px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .instructor-name {
+            color: #6c63ff;
+            font-size: 24px;
+            margin: 0;
+        }
+
+        .instructor-bio {
+            color: #666;
+            line-height: 1.6;
+            margin-top: 10px;
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .image-wrapper {
+            position: relative;
+            width: 100%;
+            padding-top: 100%;
+            overflow: hidden;
+        }
+
+        .image-wrapper img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .image-wrapper:hover img {
+            transform: scale(1.2);
+        }
+
+    </style>
+
+    <div class="course-container">
+        <div class="course-header">
+            <h1 class="course-title">{{ course.name }}</h1>
+        </div>
+        <img src="{{ course.photo.url }}" alt="Изображение курса" class="course-image">
+        <div class="course-details">
+		<p class="course-description"><strong>Описание курса:</strong>{% for p in description %}{{p}}<br>{% endfor %}</p>
+            {% if course.duration %}
+                <p><strong>Длительность:</strong> {{ course.duration }}</p>
+            {% endif %}
+            <p><strong>Количество занятий:</strong> {{ course.number_of_exercises }}</p>
+            <p><strong>Количество студентов на курсе:</strong> {{ course.number_of_students }}</p>
+            <p><strong>Дни посещения:</strong> {{ course.visiting_days }}</p>
+            <p><strong>Время посещения:</strong> {{ course.visiting_time }}</p>
+            <p><strong>Цена:</strong> {{ course.price }}</p>
+        </div>
+        <div class="instructor-section">
+            <h2 class="instructor-name">Преподаватели:</h2>
+            <div class="col-sm-6">
+                {% for teacher in course.teachers.all %}
+                    <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>{{ teacher.full_name }}</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="image-grid">
+        {% for image in course.images.all %}
+            <div class="image-wrapper">
+                <img src="{{ image.images.url }}" alt="{{ image.course.name }}">
+            </div>
+        {% endfor %}
+    </div>
+{% endblock content %}

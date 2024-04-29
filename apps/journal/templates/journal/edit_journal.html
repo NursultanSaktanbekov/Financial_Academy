@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+  <main>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-5">
+          <div class="card shadow-lg border-0 rounded-lg mt-5">
+            <div class="card-header">
+              <h3 class="text-center font-weight-light my-4">Редактировать запись</h3>
+            </div>
+            <div class="card-body" style="margin: 30px">
+              <form method="post" action="{% url 'edit_journal' journal.id %}">
+                {% csrf_token %}
+
+                <table style="margin: 0 auto; width: 80%; border-collapse: collapse;">
+                  <tr>
+                    <td><label for="{{ form.student.id_for_label }}">ФИО студента:</label></td>
+                    <td>{{ form.student }}</td>
+                  </tr>
+                  <tr>
+                    <td><label for="{{ form.phone_number.id_for_label }}">Номер телефона:</label></td>
+                    <td>{{ form.phone_number }}</td>
+                  </tr>
+                  <tr>
+                    <td><label for="{{ form.is_processed.id_for_label }}">Обработано:</label></td>
+                    <td>{{ form.is_processed }}</td>
+                  </tr>
+                  <tr>
+                    <td><label for="{{ form.is_admitted.id_for_label }}">Поступил к нам ?:</label></td>
+                    <td>{{ form.is_admitted }}</td>
+                  </tr>
+                  <tr>
+                    <td><label for="{{ form.comments.id_for_label }}">Комментарии:</label></td>
+                    <td>{{ form.comments }}</td>
+                  </tr>
+                </table>
+                <br>
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <button type="submit" class="btn btn-primary" style="width: 100%;">Сохранить изменения</button>
+                  <a href="{% url 'journal_list' %}" class="btn btn-secondary mt-3" style="width: 100%;">Отмена</a>
+                </div>
+              </form>
+              {% if form.errors %}
+    <div style="color: red; text-align: center;">
+        {% for field, errors in form.errors.items %}
+            {% for error in errors %}
+                {{ error }}
+            {% endfor %}
+        {% endfor %}
+    </div>
+{% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+{% endblock %}

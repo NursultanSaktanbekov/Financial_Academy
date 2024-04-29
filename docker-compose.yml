@@ -1,0 +1,60 @@
+version: '3.8'
+
+
+services:
+
+  nginx:
+    build:
+      context: ./nginx
+    restart: always
+    volumes:
+      - ./staticfiles:/var/www/staticfiles
+      - ./static:/var/www/static
+      - ./media:/var/www/media
+
+      - /etc/letsencrypt/live/practicumkg.com/fullchain.pem:/etc/nginx/certs/fullchain.pem:ro
+      - /etc/letsencrypt/live/practicumkg.com/privkey.pem:/etc/nginx/certs/privkey.pem:ro
+    ports:
+      - "80:80"
+      - "443:443"
+    command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
+    depends_on:
+      - web
+
+  certbot:
+    image: certbot/certbot:latest
+    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
+    volumes:
+      - ./certbot/www:/var/www/certbot/:rw
+      - ./certbot/conf:/etc/letsencrypt/:rw
+
+  db:
+    image: postgres:13.0-alpine
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    env_file:
+      - .env
+
+  web:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    command: /entrypoint.sh
+    restart: always
+    volumes:
+      - ./staticfiles:/var/www/staticfiles
+      - ./static:/var/www/static
+      - ./media:/var/www/media
+    expose:
+      - "8000"
+    env_file:
+      - .env
+    depends_on:
+      - db
+
+
+volumes:
+  postgres_data:
+  static:
+  staticfiles:
+  media:

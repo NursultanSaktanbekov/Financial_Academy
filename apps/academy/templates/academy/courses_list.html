@@ -1,0 +1,133 @@
+{% extends 'base.html' %}
+
+{% block title %}Курсы - Практикум{% endblock title %}
+
+{% block content %}
+
+<style>
+    .course-image {
+        width: 400px;
+        height: auto;
+        object-fit: cover;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+    }
+    .course-divider {
+        border-top: 2px solid #ccc;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .course-description {
+        word-wrap: break-word;
+    }
+    .course-section {
+        margin-bottom: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .course-details {
+        margin-right: 20px;
+    }
+    .course-image-container {
+        flex: 0 0 300px;
+        margin-right: 20px;
+        padding: 40px;
+    }
+    .lead strong {
+        font-weight: bold;
+    }
+</style>
+<style>
+    .course-image {
+        width: 100%; /* Занимает всю доступную ширину */
+        height: auto;
+        object-fit: cover;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+    }
+    .course-divider {
+        border-top: 2px solid #ccc;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .course-description {
+        word-wrap: break-word;
+    }
+    .course-section {
+        margin-bottom: 50px; /* Уменьшаем отступ для мобильных устройств */
+        display: flex;
+        flex-direction: column; /* Переключаемся на вертикальное расположение элементов */
+        align-items: center; /* Центрируем по оси X */
+        text-align: center;
+    }
+    .course-details {
+        margin-bottom: 20px; /* Уменьшаем отступ для мобильных устройств */
+    }
+    .course-image-container {
+        flex: 0 0 auto; /* Автоматическая ширина для мобильных устройств */
+        margin-right: 0; /* Убираем правый отступ */
+        padding: 20px; /* Уменьшаем отступ для мобильных устройств */
+    }
+    .lead strong {
+        font-weight: bold;
+    }
+
+    /* Дополнительные стили для адаптивности */
+    @media (max-width: 767px) {
+        .course-section {
+            margin-bottom: 30px; /* Увеличиваем отступ для мобильных устройств */
+        }
+        .course-details {
+            margin-bottom: 10px; /* Уменьшаем отступ для мобильных устройств */
+        }
+        .course-image-container {
+            padding: 10px; /* Уменьшаем отступ для мобильных устройств */
+        }
+    }
+</style>
+
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h4 class="section-title bg-white text-center text-primary px-3">Курсы - Практикум</h4>
+        </div>
+        <br>
+        {% for course in courses %}
+        <div class="row course-section">
+            <div class="col-lg-6 course-details">
+                <a href="{% url 'course_detail' course.pk %}" class="mb-4" style="font-size: 30px;">{{ course.name }}</a>
+                <div class="course-image-container">
+                    <img src="{{ course.photo.url }}" class="course-image" alt="{{ course.name }}">
+                </div>
+            </div>
+                <p class="lead"><strong>Профессия:</strong> {{ course.profession }}</p>
+                <p class="lead course-description">{{ course.description }}</p>
+                <p class="lead"><strong>Длительность:</strong> {{ course.duration }} недель</p>
+                <p class="lead"><strong>Количество занятий:</strong> {{ course.number_of_exercises }}</p>
+                <p class="lead"><strong>Количество студентов:</strong> {{ course.number_of_students }}</p>
+                <p class="lead"><strong>Цена:</strong> {{ course.price }} рублей</p>
+                <p class="lead"><strong>Дни посещения:</strong> {{ course.visiting_days }}</p>
+                <p class="lead"><strong>Время посещения:</strong> {{ course.visiting_time }}</p>
+                <p class="lead"><strong>Профессиональные преимущества:</strong></p>
+                <ul style="list-style-position: inside;">
+                    {% for advantage in course.professional_advantages.all %}
+                    <li>{{ advantage }}</li>
+                    {% endfor %}
+                </ul>
+                <p class="lead"><strong>Список навыков:</strong> {{ course.skills }}</p>
+                <p class="lead"><strong>Главная цель:</strong> {{ course.main_objective }}</p>
+                <p class="lead"><strong>Список целей:</strong></p>
+                <ul style="list-style-position: inside;">
+                    {% for objective in course.objectives_list %}
+                    <li>{{ objective }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <hr class="course-divider">
+        {% endfor %}
+    </div>
+
+{% endblock content %}
